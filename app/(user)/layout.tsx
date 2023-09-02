@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body suppressHydrationWarning={true}>
+            <body suppressHydrationWarning={true} className="max-w-7xl m-auto">
                 <Header />
                 <Banner />
                 {children}
