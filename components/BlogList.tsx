@@ -17,15 +17,15 @@ const BlogList = ({ posts }: Props) => {
                             key={post._id}
                             className="flex flex-col group cursor-pointer"
                         >
-                            <div className="relative w-full h-80 drop-shadow-xl group-hover:scale-105 transition-all duration-300">
+                            <div className="relative w-full h-80 drop-shadow-xl overflow-hidden">
                                 <Image
                                     src={urlFor(post.mainImage).url()}
                                     alt={post.author.name}
                                     fill
-                                    className="object-cover object-left lg:object-center"
+                                    className="object-cover object-center scale-110 group-hover:scale-100 transition-all duration-[350ms]"
                                 />
-                                <div className="absolute bottom-0 w-full bg-opacity-20 bg-black backdrop-blur-lg rounded drop-shadow-lg text-white p-5 flex flex-col sm:flex-row justify-between">
-                                    <div>
+                                <div className="absolute bottom-0 w-full bg-opacity-10 bg-gradient-to-b from-transparent to-black/60 backdrop-blur-md rounded drop-shadow-lg text-white px-5 py-2 sm:py-5 flex flex-col sm:flex-row justify-between">
+                                    <div className="text-sm">
                                         <p className="font-bold">
                                             {post.title}
                                         </p>
@@ -40,7 +40,7 @@ const BlogList = ({ posts }: Props) => {
                                         </p>
                                     </div>
 
-                                    <div className="flex flex-col md:flex-row gap-y-2 md:gap-x-2 items-center shrink-0">
+                                    <div className="flex flex-col md:flex-row gap-y-2 md:gap-x-2 items-center justify-center mt-3 sm:mt-0 shrink-0">
                                         {post?.categories &&
                                             post.categories.map(
                                                 (category, index) => (
