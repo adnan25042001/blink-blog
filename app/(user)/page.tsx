@@ -10,8 +10,11 @@ const query = groq`
 } | order(_createdAt desc)
 `;
 
+// revalidates this page every 30 sec.
+export const revalidate = 30; 
+
 const Home = async () => {
-    let posts = await client.fetch(query);
+    const posts = await client.fetch(query);
 
     return <BlogList posts={posts} />;
 };
